@@ -6,7 +6,7 @@ from subdir.utils import util
 
 from deep_sort_realtime.deepsort_tracker import DeepSort
 
-logger = logging.getLogger('testLogger')
+logger = logging.getLogger('logging_example')
 
 if __name__ == '__main__':
 
