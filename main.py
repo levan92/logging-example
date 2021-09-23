@@ -6,10 +6,7 @@ from subdir.utils import util
 
 from deep_sort_realtime.deepsort_tracker import DeepSort
 
-logger = logging.getLogger('logging_example')
-
 if __name__ == '__main__':
-
     ap = argparse.ArgumentParser()
     ap.add_argument('--logfile')
     ap.add_argument('--loglevel', default='INFO')
@@ -26,6 +23,8 @@ if __name__ == '__main__':
     console.setFormatter(formatter)
     logging.getLogger('').addHandler(console)
 
+    logger = logging.getLogger('logging_example')
+    
     logger.warn('Watch out!')  
     logger.info('I told you so') 
     logger.debug('debugging') 
