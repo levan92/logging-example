@@ -16,7 +16,15 @@ if __name__ == '__main__':
     args = ap.parse_args()
 
     format = "[%(asctime)s] [%(levelname)s] [%(name)s] %(message)s"
-    logging.basicConfig(filename=args.logfile, format=format, level=args.loglevel)
+
+    # set up logging to file
+    logging.basicConfig(filename=args.logfile, level=args.loglevel, format=format)
+    # set up logging to console
+    console = logging.StreamHandler()
+    console.setLevel(args.loglevel)
+    formatter = logging.Formatter(format)
+    console.setFormatter(formatter)
+    logging.getLogger('').addHandler(console)
 
     logger.warn('Watch out!')  
     logger.info('I told you so') 
